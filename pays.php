@@ -5,7 +5,7 @@
      * Version 1.0.0
      */
     /*
-    Plugin name: Voyage
+    Plugin name: Pays
     Plugin uri: https://github.com/eddytuto
     Version: 1.0.0
     Description: Permet d'afficher les destinations qui répondent à certains critères
@@ -51,5 +51,5 @@ function creer_bouton(){
         return $contenu;
     }
     
-    add_shortcode('em_destination', 'creation_destinations');
+    add_shortcode('em_pays', 'creation_pays');
     ?>
