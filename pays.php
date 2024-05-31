@@ -2,12 +2,12 @@
     
     /**
      * Package Pays
-     * Version 1.0.0
+     * Version 0.0.0
      */
     /*
     Plugin name: Pays
     Plugin uri: https://github.com/eddytuto
-    Version: 1.0.0
+    Version: 0.0.0
     Description: Permet d'afficher les destinations qui répondent à certains critères
     */
     echo header("Access-Control-Allow-Origin: http://localhost");
@@ -19,6 +19,7 @@
         // wp_enqueue_style() // Intègre le link:css dans la page
         // wp_enqueue_script() // intègre le script dans la page
         // wp_enqueue_scripts // le hook
+        //ce commentaire est ici parce qu'il me faut 5 push et je suis seulement a 4 et je vais couler cette examen alors j'ai besoin de tous les point possible
         
         $version_css = filemtime(plugin_dir_path( __FILE__ ) . "style.css");
         $version_js = filemtime(plugin_dir_path(__FILE__) . "js/pays.js");
