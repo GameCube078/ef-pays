@@ -1,20 +1,20 @@
 (function () {
     console.log("rest API");
-    // URL de l'API REST de WordPress
-    let lien_categories = document.querySelectorAll(".lien_categories");
-    for (const elm of lien_categories) {
+    // url2 de l'API REST de WordPress
+    let lien_categories2 = document.querySelectorAll(".lien_categories2");
+    for (const elm of lien_categories2) {
         console.log(elm.id);
         elm.addEventListener("mousedown", function () {
             const id = elm.id.split("_")[1];
             console.log(id);
-            let url = `https://gftnth00.mywhc.ca/tim13/wp-json/wp/v2/posts?categories=${id}`;
-            mon_fetch(url);
+            let url2 = `https://gftnth00.mywhc.ca/tim13/wp-json/wp/v2/posts?categories=${id}`;
+            mon_fetch2(url2);
         });
     }
 
     // Effectuer la requête HTTP en utilisant fetch()
-    function mon_fetch(url) {
-        fetch(url)
+    function mon_fetch2(url2) {
+        fetch(url2)
             .then(function (response) {
                 // Vérifier si la réponse est OK (statut HTTP 200)
                 if (!response.ok) {
@@ -28,24 +28,24 @@
             .then(function (data) {
                 // La variable "data" contient la réponse JSON
                 console.log(data);
-                let restapi = document.querySelector(".contenu__restapi");
+                let restapi2 = document.querySelector(".contenu2__restapi22");
                 // Maintenant, vous pouvez traiter les données comme vous le souhaitez
-                restapi.innerHTML = "";
-                // Par exemple, extraire les titres des articles comme dans l'exemple précédent
+                restapi2.innerHTML = "";
+                // Par exemple, extraire les titre2s des articles comme dans l'exemple précédent
                 data.forEach(function (article) {
-                    let titre = article.title.rendered;
-                    let contenu = article.content.rendered;
-                    contenu = trimWord(contenu, 10);
-                    console.log(titre);
-                    let carte = document.createElement("div");
-                    carte.classList.add("restapi__carte");
-                    carte.classList.add("carte");
+                    let titre2 = article.title.rendered;
+                    let contenu2 = article.content.rendered;
+                    contenu2 = trimWord2(contenu2, 10);
+                    console.log(titre2);
+                    let carte2 = document.createElement("div");
+                    carte2.classList.add("restapi2__carte2");
+                    carte2.classList.add("carte2");
 
-                    carte.innerHTML = `
-          <h2>${titre}</h2>
-          <p>${contenu}</p>
+                    carte2.innerHTML = `
+          <h2>${titre2}</h2>
+          <p>${contenu2}</p>
           `;
-                    restapi.appendChild(carte);
+                    restapi2.appendChild(carte2);
                 });
             })
             .catch(function (error) {
@@ -53,8 +53,8 @@
                 console.error("Erreur lors de la récupération des données :", error);
             });
     }
-    function trimWord(sentence, wordCount) {
-        let result = sentence.split(" ").splice(0, wordCount).join(" ");
-        return result + "...";
+    function trimWord2(sentence, wordCount) {
+        let result2 = sentence.split(" ").splice(0, wordCount).join(" ");
+        return result2 + "...";
     }
 })();
